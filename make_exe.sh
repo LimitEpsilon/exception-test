@@ -1,4 +1,4 @@
 for file in $(ls *.ml)
   do
-  ocamlc -bin-annot -c $file
+  ocamlc -o $file.exe $file
   done

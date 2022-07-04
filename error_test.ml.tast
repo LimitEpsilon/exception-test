@@ -1,0 +1,607 @@
+File "error_test.ml", line 29, characters 8-23:
+29 | let _ = Pervasives.(|>) 1 id
+             ^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+[
+  structure_item (error_test.ml[1,0+0]..error_test.ml[1,0+27])
+    Tstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (error_test.ml[1,0+0]..error_test.ml[1,0+27])
+          pext_name = "ERROR/267"
+          pext_kind =
+            Text_decl
+              [
+                core_type (error_test.ml[1,0+19]..error_test.ml[1,0+27])
+                  Ttyp_constr "list/9!"
+                  [
+                    core_type (error_test.ml[1,0+19]..error_test.ml[1,0+22])
+                      Ttyp_constr "int/1!"
+                      []
+                  ]
+              ]
+              None
+  structure_item (error_test.ml[2,28+0]..error_test.ml[2,28+26])
+    Tstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (error_test.ml[2,28+0]..error_test.ml[2,28+26])
+          pext_name = "EXIT/268"
+          pext_kind =
+            Text_decl
+              [
+                core_type (error_test.ml[2,28+18]..error_test.ml[2,28+26])
+                  Ttyp_constr "list/9!"
+                  [
+                    core_type (error_test.ml[2,28+18]..error_test.ml[2,28+21])
+                      Ttyp_constr "int/1!"
+                      []
+                  ]
+              ]
+              None
+  structure_item (error_test.ml[3,55+0]..error_test.ml[5,160+47])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[3,55+4]..error_test.ml[3,55+5])
+          Tpat_var "f/269"
+        expression (error_test.ml[3,55+6]..error_test.ml[5,160+47]) ghost
+          Texp_function
+          Nolabel
+          [
+            <case>
+              pattern (error_test.ml[3,55+6]..error_test.ml[3,55+15])
+                Tpat_tuple
+                [
+                  pattern (error_test.ml[3,55+7]..error_test.ml[3,55+8])
+                    Tpat_var "n/271"
+                  pattern (error_test.ml[3,55+10]..error_test.ml[3,55+11])
+                    Tpat_var "x/272"
+                  pattern (error_test.ml[3,55+13]..error_test.ml[3,55+14])
+                    Tpat_var "y/273"
+                ]
+              expression (error_test.ml[3,55+18]..error_test.ml[5,160+47])
+                Texp_ifthenelse
+                expression (error_test.ml[3,55+21]..error_test.ml[3,55+26])
+                  Texp_apply
+                  expression (error_test.ml[3,55+23]..error_test.ml[3,55+24])
+                    Texp_ident "Stdlib!.<"
+                  [
+                    <arg>
+                      Nolabel
+                      expression (error_test.ml[3,55+21]..error_test.ml[3,55+22])
+                        Texp_ident "n/271"
+                    <arg>
+                      Nolabel
+                      expression (error_test.ml[3,55+25]..error_test.ml[3,55+26])
+                        Texp_constant Const_int 0
+                  ]
+                expression (error_test.ml[3,55+32]..error_test.ml[3,55+45])
+                  Texp_apply
+                  expression (error_test.ml[3,55+32]..error_test.ml[3,55+37])
+                    Texp_ident "Stdlib!.raise"
+                  [
+                    <arg>
+                      Nolabel
+                      expression (error_test.ml[3,55+38]..error_test.ml[3,55+45])
+                        Texp_apply
+                        expression (error_test.ml[3,55+39]..error_test.ml[3,55+40])
+                          Texp_ident "x/272"
+                        [
+                          <arg>
+                            Nolabel
+                            expression (error_test.ml[3,55+41]..error_test.ml[3,55+44])
+                              Texp_construct "::"
+                              [
+                                expression (error_test.ml[3,55+42]..error_test.ml[3,55+43])
+                                  Texp_ident "n/271"
+                                expression (error_test.ml[3,55+43]..error_test.ml[3,55+44]) ghost
+                                  Texp_construct "[]"
+                                  []
+                              ]
+                        ]
+                  ]
+                Some
+                  expression (error_test.ml[4,101+32]..error_test.ml[5,160+47])
+                    Texp_ifthenelse
+                    expression (error_test.ml[4,101+35]..error_test.ml[4,101+40])
+                      Texp_apply
+                      expression (error_test.ml[4,101+37]..error_test.ml[4,101+38])
+                        Texp_ident "Stdlib!.="
+                      [
+                        <arg>
+                          Nolabel
+                          expression (error_test.ml[4,101+35]..error_test.ml[4,101+36])
+                            Texp_ident "n/271"
+                        <arg>
+                          Nolabel
+                          expression (error_test.ml[4,101+39]..error_test.ml[4,101+40])
+                            Texp_constant Const_int 0
+                      ]
+                    expression (error_test.ml[4,101+46]..error_test.ml[4,101+58])
+                      Texp_apply
+                      expression (error_test.ml[4,101+46]..error_test.ml[4,101+51])
+                        Texp_ident "Stdlib!.raise"
+                      [
+                        <arg>
+                          Nolabel
+                          expression (error_test.ml[4,101+52]..error_test.ml[4,101+58])
+                            Texp_apply
+                            expression (error_test.ml[4,101+53]..error_test.ml[4,101+54])
+                              Texp_ident "y/273"
+                            [
+                              <arg>
+                                Nolabel
+                                expression (error_test.ml[4,101+55]..error_test.ml[4,101+57])
+                                  Texp_construct "[]"
+                                  []
+                            ]
+                      ]
+                    Some
+                      expression (error_test.ml[5,160+46]..error_test.ml[5,160+47])
+                        Texp_ident "n/271"
+          ]
+    ]
+  structure_item (error_test.ml[6,208+0]..error_test.ml[10,332+16])
+    Tstr_value Rec
+    [
+      <def>
+        pattern (error_test.ml[6,208+8]..error_test.ml[6,208+9])
+          Tpat_var "g/275"
+        expression (error_test.ml[6,208+10]..error_test.ml[10,332+16]) ghost
+          Texp_function
+          Nolabel
+          [
+            <case>
+              pattern (error_test.ml[6,208+10]..error_test.ml[6,208+19])
+                Tpat_tuple
+                [
+                  pattern (error_test.ml[6,208+11]..error_test.ml[6,208+12])
+                    Tpat_var "m/276"
+                  pattern (error_test.ml[6,208+14]..error_test.ml[6,208+15])
+                    Tpat_var "x/277"
+                  pattern (error_test.ml[6,208+17]..error_test.ml[6,208+18])
+                    Tpat_var "y/278"
+                ]
+              expression (error_test.ml[6,208+22]..error_test.ml[10,332+16])
+                Texp_try
+                expression (error_test.ml[6,208+26]..error_test.ml[6,208+37])
+                  Texp_apply
+                  expression (error_test.ml[6,208+26]..error_test.ml[6,208+27])
+                    Texp_ident "f/269"
+                  [
+                    <arg>
+                      Nolabel
+                      expression (error_test.ml[6,208+28]..error_test.ml[6,208+37])
+                        Texp_tuple
+                        [
+                          expression (error_test.ml[6,208+29]..error_test.ml[6,208+30])
+                            Texp_ident "m/276"
+                          expression (error_test.ml[6,208+32]..error_test.ml[6,208+33])
+                            Texp_ident "x/277"
+                          expression (error_test.ml[6,208+35]..error_test.ml[6,208+36])
+                            Texp_ident "y/278"
+                        ]
+                  ]
+                [
+                  <case>
+                    pattern (error_test.ml[7,251+4]..error_test.ml[7,251+13])
+                      Tpat_construct "ERROR"
+                      [
+                        pattern (error_test.ml[7,251+10]..error_test.ml[7,251+13])
+                          Tpat_construct "::"
+                          [
+                            pattern (error_test.ml[7,251+11]..error_test.ml[7,251+12])
+                              Tpat_var "a/279"
+                            pattern (error_test.ml[7,251+12]..error_test.ml[7,251+13]) ghost
+                              Tpat_construct "[]"
+                              []
+                              None
+                          ]
+                          None
+                      ]
+                      None
+                    expression (error_test.ml[7,251+17]..error_test.ml[7,251+31])
+                      Texp_apply
+                      expression (error_test.ml[7,251+17]..error_test.ml[7,251+18])
+                        Texp_ident "g/275"
+                      [
+                        <arg>
+                          Nolabel
+                          expression (error_test.ml[7,251+18]..error_test.ml[7,251+31])
+                            Texp_tuple
+                            [
+                              expression (error_test.ml[7,251+19]..error_test.ml[7,251+24])
+                                Texp_apply
+                                expression (error_test.ml[7,251+21]..error_test.ml[7,251+22])
+                                  Texp_ident "Stdlib!.+"
+                                [
+                                  <arg>
+                                    Nolabel
+                                    expression (error_test.ml[7,251+19]..error_test.ml[7,251+20])
+                                      Texp_ident "a/279"
+                                  <arg>
+                                    Nolabel
+                                    expression (error_test.ml[7,251+23]..error_test.ml[7,251+24])
+                                      Texp_constant Const_int 1
+                                ]
+                              expression (error_test.ml[7,251+26]..error_test.ml[7,251+27])
+                                Texp_ident "y/278"
+                              expression (error_test.ml[7,251+29]..error_test.ml[7,251+30])
+                                Texp_ident "x/277"
+                            ]
+                      ]
+                  <case>
+                    pattern (error_test.ml[8,283+4]..error_test.ml[8,283+12])
+                      Tpat_construct "EXIT"
+                      [
+                        pattern (error_test.ml[8,283+9]..error_test.ml[8,283+12])
+                          Tpat_construct "::"
+                          [
+                            pattern (error_test.ml[8,283+10]..error_test.ml[8,283+11])
+                              Tpat_var "a/280"
+                            pattern (error_test.ml[8,283+11]..error_test.ml[8,283+12]) ghost
+                              Tpat_construct "[]"
+                              []
+                              None
+                          ]
+                          None
+                      ]
+                      None
+                    expression (error_test.ml[8,283+16]..error_test.ml[8,283+30])
+                      Texp_apply
+                      expression (error_test.ml[8,283+16]..error_test.ml[8,283+17])
+                        Texp_ident "g/275"
+                      [
+                        <arg>
+                          Nolabel
+                          expression (error_test.ml[8,283+17]..error_test.ml[8,283+30])
+                            Texp_tuple
+                            [
+                              expression (error_test.ml[8,283+18]..error_test.ml[8,283+23])
+                                Texp_apply
+                                expression (error_test.ml[8,283+20]..error_test.ml[8,283+21])
+                                  Texp_ident "Stdlib!.+"
+                                [
+                                  <arg>
+                                    Nolabel
+                                    expression (error_test.ml[8,283+18]..error_test.ml[8,283+19])
+                                      Texp_ident "a/280"
+                                  <arg>
+                                    Nolabel
+                                    expression (error_test.ml[8,283+22]..error_test.ml[8,283+23])
+                                      Texp_constant Const_int 1
+                                ]
+                              expression (error_test.ml[8,283+25]..error_test.ml[8,283+26])
+                                Texp_ident "y/278"
+                              expression (error_test.ml[8,283+28]..error_test.ml[8,283+29])
+                                Texp_ident "x/277"
+                            ]
+                      ]
+                  <case>
+                    pattern (error_test.ml[9,314+4]..error_test.ml[9,314+12])
+                      Tpat_construct "ERROR"
+                      [
+                        pattern (error_test.ml[9,314+10]..error_test.ml[9,314+12])
+                          Tpat_construct "[]"
+                          []
+                          None
+                      ]
+                      None
+                    expression (error_test.ml[9,314+16]..error_test.ml[9,314+17])
+                      Texp_constant Const_int 0
+                  <case>
+                    pattern (error_test.ml[10,332+4]..error_test.ml[10,332+11])
+                      Tpat_construct "EXIT"
+                      [
+                        pattern (error_test.ml[10,332+9]..error_test.ml[10,332+11])
+                          Tpat_construct "[]"
+                          []
+                          None
+                      ]
+                      None
+                    expression (error_test.ml[10,332+15]..error_test.ml[10,332+16])
+                      Texp_constant Const_int 0
+                ]
+          ]
+    ]
+  structure_item (error_test.ml[11,349+0]..error_test.ml[11,349+18])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[11,349+4]..error_test.ml[11,349+6])
+          Tpat_var "e1/282"
+        expression (error_test.ml[11,349+7]..error_test.ml[11,349+18]) ghost
+          Texp_function
+          Nolabel
+          [
+            <case>
+              pattern (error_test.ml[11,349+7]..error_test.ml[11,349+8])
+                Tpat_var "x/284"
+              expression (error_test.ml[11,349+11]..error_test.ml[11,349+18])
+                Texp_construct "ERROR"
+                [
+                  expression (error_test.ml[11,349+17]..error_test.ml[11,349+18])
+                    Texp_ident "x/284"
+                ]
+          ]
+    ]
+  structure_item (error_test.ml[12,368+0]..error_test.ml[12,368+17])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[12,368+4]..error_test.ml[12,368+6])
+          Tpat_var "e2/285"
+        expression (error_test.ml[12,368+7]..error_test.ml[12,368+17]) ghost
+          Texp_function
+          Nolabel
+          [
+            <case>
+              pattern (error_test.ml[12,368+7]..error_test.ml[12,368+8])
+                Tpat_var "x/287"
+              expression (error_test.ml[12,368+11]..error_test.ml[12,368+17])
+                Texp_construct "EXIT"
+                [
+                  expression (error_test.ml[12,368+16]..error_test.ml[12,368+17])
+                    Texp_ident "x/287"
+                ]
+          ]
+    ]
+  structure_item (error_test.ml[13,386+0]..error_test.ml[13,386+26])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[13,386+4]..error_test.ml[13,386+8])
+          Tpat_var "main/288"
+        expression (error_test.ml[13,386+9]..error_test.ml[13,386+26]) ghost
+          Texp_function
+          Nolabel
+          [
+            <case>
+              pattern (error_test.ml[13,386+9]..error_test.ml[13,386+10])
+                Tpat_var "c/290"
+              expression (error_test.ml[13,386+13]..error_test.ml[13,386+26])
+                Texp_apply
+                expression (error_test.ml[13,386+13]..error_test.ml[13,386+14])
+                  Texp_ident "g/275"
+                [
+                  <arg>
+                    Nolabel
+                    expression (error_test.ml[13,386+15]..error_test.ml[13,386+26])
+                      Texp_tuple
+                      [
+                        expression (error_test.ml[13,386+16]..error_test.ml[13,386+17])
+                          Texp_ident "c/290"
+                        expression (error_test.ml[13,386+19]..error_test.ml[13,386+21])
+                          Texp_ident "e1/282"
+                        expression (error_test.ml[13,386+23]..error_test.ml[13,386+25])
+                          Texp_ident "e2/285"
+                      ]
+                ]
+          ]
+    ]
+  structure_item (error_test.ml[14,413+0]..error_test.ml[14,413+17])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[14,413+4]..error_test.ml[14,413+5])
+          Tpat_any
+        expression (error_test.ml[14,413+8]..error_test.ml[14,413+17])
+          Texp_apply
+          expression (error_test.ml[14,413+8]..error_test.ml[14,413+12])
+            Texp_ident "main/288"
+          [
+            <arg>
+              Nolabel
+              expression (error_test.ml[14,413+13]..error_test.ml[14,413+17])
+                Texp_constant Const_int -2
+          ]
+    ]
+  structure_item (error_test.ml[17,433+0]..error_test.ml[20,504+50])
+    Tstr_value Rec
+    [
+      <def>
+        pattern (error_test.ml[17,433+8]..error_test.ml[17,433+12])
+          Tpat_var "fact/291"
+        expression (error_test.ml[17,433+13]..error_test.ml[20,504+50]) ghost
+          Texp_function
+          Nolabel
+          [
+            <case>
+              pattern (error_test.ml[17,433+13]..error_test.ml[17,433+14])
+                Tpat_var "x/292"
+              expression (error_test.ml[18,450+2]..error_test.ml[20,504+50])
+                Texp_letexception
+                extension_constructor (error_test.ml[18,450+16]..error_test.ml[18,450+20])
+                  pext_name = "ZERO/293"
+                  pext_kind =
+                    Text_decl
+                      []
+                      None
+                expression (error_test.ml[19,474+4]..error_test.ml[20,504+50])
+                  Texp_ifthenelse
+                  expression (error_test.ml[19,474+7]..error_test.ml[19,474+13])
+                    Texp_apply
+                    expression (error_test.ml[19,474+9]..error_test.ml[19,474+11])
+                      Texp_ident "Stdlib!.<="
+                    [
+                      <arg>
+                        Nolabel
+                        expression (error_test.ml[19,474+7]..error_test.ml[19,474+8])
+                          Texp_ident "x/292"
+                      <arg>
+                        Nolabel
+                        expression (error_test.ml[19,474+12]..error_test.ml[19,474+13])
+                          Texp_constant Const_int 0
+                    ]
+                  expression (error_test.ml[19,474+19]..error_test.ml[19,474+29])
+                    Texp_apply
+                    expression (error_test.ml[19,474+19]..error_test.ml[19,474+24])
+                      Texp_ident "Stdlib!.raise"
+                    [
+                      <arg>
+                        Nolabel
+                        expression (error_test.ml[19,474+25]..error_test.ml[19,474+29])
+                          Texp_construct "ZERO"
+                          []
+                    ]
+                  Some
+                    expression (error_test.ml[20,504+13]..error_test.ml[20,504+50])
+                      Texp_try
+                      expression (error_test.ml[20,504+17]..error_test.ml[20,504+35])
+                        Texp_apply
+                        expression (error_test.ml[20,504+19]..error_test.ml[20,504+20])
+                          Texp_ident "Stdlib!.*"
+                        [
+                          <arg>
+                            Nolabel
+                            expression (error_test.ml[20,504+17]..error_test.ml[20,504+18])
+                              Texp_ident "x/292"
+                          <arg>
+                            Nolabel
+                            expression (error_test.ml[20,504+21]..error_test.ml[20,504+35])
+                              Texp_apply
+                              expression (error_test.ml[20,504+22]..error_test.ml[20,504+26])
+                                Texp_ident "fact/291"
+                              [
+                                <arg>
+                                  Nolabel
+                                  expression (error_test.ml[20,504+27]..error_test.ml[20,504+34])
+                                    Texp_apply
+                                    expression (error_test.ml[20,504+30]..error_test.ml[20,504+31])
+                                      Texp_ident "Stdlib!.-"
+                                    [
+                                      <arg>
+                                        Nolabel
+                                        expression (error_test.ml[20,504+28]..error_test.ml[20,504+29])
+                                          Texp_ident "x/292"
+                                      <arg>
+                                        Nolabel
+                                        expression (error_test.ml[20,504+32]..error_test.ml[20,504+33])
+                                          Texp_constant Const_int 1
+                                    ]
+                              ]
+                        ]
+                      [
+                        <case>
+                          pattern (error_test.ml[20,504+41]..error_test.ml[20,504+45])
+                            Tpat_construct "ZERO"
+                            []
+                            None
+                          expression (error_test.ml[20,504+49]..error_test.ml[20,504+50])
+                            Texp_constant Const_int 1
+                      ]
+          ]
+    ]
+  structure_item (error_test.ml[22,556+0]..error_test.ml[22,556+48])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[22,556+4]..error_test.ml[22,556+5])
+          Tpat_any
+        expression (error_test.ml[22,556+8]..error_test.ml[22,556+48])
+          Texp_apply
+          expression (error_test.ml[22,556+8]..error_test.ml[22,556+21])
+            Texp_ident "Stdlib!.print_endline"
+          [
+            <arg>
+              Nolabel
+              expression (error_test.ml[22,556+22]..error_test.ml[22,556+48])
+                Texp_apply
+                expression (error_test.ml[22,556+23]..error_test.ml[22,556+36])
+                  Texp_ident "Stdlib!.string_of_int"
+                [
+                  <arg>
+                    Nolabel
+                    expression (error_test.ml[22,556+37]..error_test.ml[22,556+47])
+                      Texp_apply
+                      expression (error_test.ml[22,556+38]..error_test.ml[22,556+42])
+                        Texp_ident "fact/291"
+                      [
+                        <arg>
+                          Nolabel
+                          expression (error_test.ml[22,556+43]..error_test.ml[22,556+46])
+                            Texp_constant Const_int 1
+                      ]
+                ]
+          ]
+    ]
+  structure_item (error_test.ml[24,606+0]..error_test.ml[24,606+13])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[24,606+4]..error_test.ml[24,606+5])
+          Tpat_var "a/294"
+        expression (error_test.ml[24,606+8]..error_test.ml[24,606+13])
+          Texp_ident "Stdlib!.raise"
+    ]
+  structure_item (error_test.ml[26,621+0]..error_test.ml[26,621+15])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[26,621+4]..error_test.ml[26,621+8])
+          Tpat_var "|?/295"
+        expression (error_test.ml[26,621+11]..error_test.ml[26,621+15])
+          Texp_ident "Stdlib!.|>"
+    ]
+  structure_item (error_test.ml[27,637+0]..error_test.ml[27,637+12])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[27,637+4]..error_test.ml[27,637+6])
+          Tpat_var "id/296"
+        expression (error_test.ml[27,637+7]..error_test.ml[27,637+12]) ghost
+          Texp_function
+          Nolabel
+          [
+            <case>
+              pattern (error_test.ml[27,637+7]..error_test.ml[27,637+8])
+                Tpat_var "x/298"
+              expression (error_test.ml[27,637+11]..error_test.ml[27,637+12])
+                Texp_ident "x/298"
+          ]
+    ]
+  structure_item (error_test.ml[28,650+0]..error_test.ml[28,650+15])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[28,650+4]..error_test.ml[28,650+5])
+          Tpat_any
+        expression (error_test.ml[28,650+8]..error_test.ml[28,650+15])
+          Texp_apply
+          expression (error_test.ml[28,650+10]..error_test.ml[28,650+12])
+            Texp_ident "|?/295"
+          [
+            <arg>
+              Nolabel
+              expression (error_test.ml[28,650+8]..error_test.ml[28,650+9])
+                Texp_constant Const_int 1
+            <arg>
+              Nolabel
+              expression (error_test.ml[28,650+13]..error_test.ml[28,650+15])
+                Texp_ident "id/296"
+          ]
+    ]
+  structure_item (error_test.ml[29,666+0]..error_test.ml[29,666+28])
+    Tstr_value Nonrec
+    [
+      <def>
+        pattern (error_test.ml[29,666+4]..error_test.ml[29,666+5])
+          Tpat_any
+        expression (error_test.ml[29,666+8]..error_test.ml[29,666+28])
+          Texp_apply
+          expression (error_test.ml[29,666+26]..error_test.ml[29,666+28])
+            Texp_ident "id/296"
+          [
+            <arg>
+              Nolabel
+              expression (error_test.ml[29,666+24]..error_test.ml[29,666+25])
+                Texp_constant Const_int 1
+          ]
+    ]
+]
+

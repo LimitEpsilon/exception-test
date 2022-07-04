@@ -1,1 +1,5 @@
-reanalyze-test -exception-cmt ./error_test.cmt
+REANALYZE='reanalyze-test'
+for cmt in $(ls *.cmt)
+  do
+  $REANALYZE -exception-cmt $cmt
+  done
