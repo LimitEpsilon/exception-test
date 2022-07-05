@@ -1,0 +1,92 @@
+File "error_test.ml", line 20, characters 13-14:
+20 | let main c = g c e1 e2
+                  ^
+Warning 6 [labels-omitted]: label x was omitted in the application of this function.
+File "error_test.ml", line 29, characters 38-42:
+29 | let _ = print_endline (string_of_int (fact (1)))
+                                           ^^^^
+Warning 6 [labels-omitted]: label x was omitted in the application of this function.
+File "error_test.ml", line 36, characters 8-23:
+36 | let _ = Pervasives.(|>) 1 id
+             ^^^^^^^^^^^^^^^
+Alert deprecated: module Stdlib.Pervasives
+Use Stdlib instead.
+
+If you need to stay compatible with OCaml < 4.07, you can use the 
+stdlib-shims library: https://github.com/ocaml/stdlib-shims
+(setglobal Error_test!
+  (let
+    (ERROR/267 = (makeblock 248 "Error_test.ERROR" (caml_fresh_oo_id 0))
+     EXIT/268 = (makeblock 248 "Error_test.EXIT" (caml_fresh_oo_id 0))
+     one/273 = 4093233
+     two/274 = 735709850)
+    (seq
+      (apply (field 45 (global Stdlib!))
+        (apply (field 32 (global Stdlib!))
+          (let (param/530 = 1 y/529 =[int] 3) (- param/530 y/529))))
+      (let
+        (f/280 =
+           (function param/285 : int
+             (let (n/282 =a (field 0 param/285))
+               (if (< n/282 0)
+                 (raise
+                   (apply (field 1 param/285) (makeblock 0 (int,*) n/282 0)))
+                 (if (== n/282 0) (raise (apply (field 2 param/285) 0))
+                   n/282)))))
+        (letrec
+          (g/286
+             (function m/287[int] x/288 y/289 : int
+               (try (apply f/280 (makeblock 0 (int,*,*) m/287 x/288 y/289))
+                with exn/512
+                 (catch
+                   (catch
+                     (if (== (field 0 exn/512) ERROR/267)
+                       (let (*match*/513 =a (field 1 exn/512))
+                         (if *match*/513
+                           (if (field 1 *match*/513) (exit 1)
+                             (apply g/286 (+ (field 0 *match*/513) 1) y/289
+                               x/288))
+                           (exit 3)))
+                       (if (== (field 0 exn/512) EXIT/268)
+                         (let (*match*/516 =a (field 1 exn/512))
+                           (if *match*/516
+                             (if (field 1 *match*/516) (exit 1)
+                               (apply g/286 (+ (field 0 *match*/516) 1) x/288
+                                 y/289))
+                             (exit 3)))
+                         (exit 3)))
+                    with (3)
+                     (if (== (field 0 exn/512) ERROR/267)
+                       (if (field 1 exn/512) (exit 1) 0)
+                       (if (== (field 0 exn/512) EXIT/268)
+                         (if (field 1 exn/512) (exit 1) 0) (exit 1))))
+                  with (1) (reraise exn/512)))))
+          (let
+            (e1/292 = (function x/294 (makeblock 0 ERROR/267 x/294))
+             e2/295 = (function x/297 (makeblock 0 EXIT/268 x/297))
+             main/298 =
+               (function c/300[int] : int (apply g/286 c/300 e1/292 e2/295)))
+            (seq (apply main/298 -2)
+              (letrec
+                (fact/301
+                   (function x/302[int] : int
+                     (let
+                       (ZERO/303 =
+                          (makeblock 248 "ZERO" (caml_fresh_oo_id 0)))
+                       (if (<= x/302 0) (raise ZERO/303)
+                         (try (* x/302 (apply fact/301 (- x/302 1)))
+                          with exn/523
+                           (if (== exn/523 ZERO/303) 1 (reraise exn/523)))))))
+                (seq
+                  (apply (field 45 (global Stdlib!))
+                    (apply (field 32 (global Stdlib!)) (apply fact/301 1)))
+                  (let
+                    (a/304 = (function prim/524 stub (raise prim/524))
+                     |?/305 =
+                       (function prim/526 prim/525 stub
+                         (apply prim/525 prim/526))
+                     id/306 = (function x/308 x/308))
+                    (seq (apply |?/305 1 id/306) (apply id/306 1)
+                      (makeblock 0 ERROR/267 EXIT/268 one/273 two/274 f/280
+                        g/286 e1/292 e2/295 main/298 fact/301 a/304 |?/305
+                        id/306))))))))))))
