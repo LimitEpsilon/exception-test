@@ -1,0 +1,32 @@
+[
+  structure_item (test.ml[1,0+0]..[1,0+19])
+    Pstr_eval
+    expression (test.ml[1,0+0]..[1,0+19])
+      Pexp_let Nonrec
+      [
+        <def>
+          pattern (test.ml[1,0+4]..[1,0+5])
+            Ppat_var "x" (test.ml[1,0+4]..[1,0+5])
+          expression (test.ml[1,0+8]..[1,0+13])
+            Pexp_apply
+            expression (test.ml[1,0+8]..[1,0+11])
+              Pexp_ident "ref" (test.ml[1,0+8]..[1,0+11])
+            [
+              <arg>
+              Nolabel
+                expression (test.ml[1,0+12]..[1,0+13])
+                  Pexp_constant PConst_int (0,None)
+            ]
+      ]
+      expression (test.ml[1,0+17]..[1,0+19])
+        Pexp_apply
+        expression (test.ml[1,0+17]..[1,0+18])
+          Pexp_ident "!" (test.ml[1,0+17]..[1,0+18])
+        [
+          <arg>
+          Nolabel
+            expression (test.ml[1,0+18]..[1,0+19])
+              Pexp_ident "x" (test.ml[1,0+18]..[1,0+19])
+        ]
+]
+

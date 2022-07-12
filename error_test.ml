@@ -6,7 +6,7 @@ let two = `BLUE;;
 let f x ~y = x - y in
   let g = (f ~y:3) in
     print_endline (string_of_int (g 1));;
-
+let f x = for x = 1 to 10 do print_endline "foo" done;;
 let f (n, x, y) = if n < 0 then raise (x [n])
                            else if n = 0 then raise (y [])
                                          else n
