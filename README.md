@@ -1,4 +1,4 @@
-* Exception Analysis Tests
+# Exception Analysis Tests
 
 Assuming that the binary for reanalyze is named `reanalyze-test`, first run the following command in the base directory to make the cmt files necessary for analysis.
 ```shell
