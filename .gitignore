@@ -1,0 +1,9 @@
+*.cmt
+*.cmo
+*.cmi
+
+*.ast
+*.tast
+*.result
+*.log
+*.exe
