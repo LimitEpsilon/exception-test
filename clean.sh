@@ -1,0 +1,11 @@
+rm tests/*.o
+rm tests/*.cmo
+rm tests/*.cmx
+rm tests/*.cmi
+rm tests/*.cmt
+rm tests/*.exe
+rm tests/*.tast
+rm tests/*.ast
+rm tests/*.lam
+rm tests/*.result
+rm tests/*.log

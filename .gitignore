@@ -1,5 +1,8 @@
+*.o
+
 *.cmt
 *.cmo
+*.cmx
 *.cmi
 
 *.ast
