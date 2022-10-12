@@ -9,7 +9,7 @@ Now, test out exception analysis in different levels of elaboration by
 ```shell
 ./run_test.sh          # run exa and print the results to tests/*.result
 ./make_log.sh          # print debug logs and print the results to tests/*.debug.log
-./make_debug_pat.sh    # print pattern filtering logs and print the results to tests/*.debug_pat.log
+./make_pat_log.sh      # print pattern filtering logs and print the results to tests/*.debug_pat.log
 ```
 
 You can also print out the lambda IR/Typedtree/Parsetree of the code by running
