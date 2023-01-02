@@ -4,5 +4,5 @@ let a = {x = 3; y = true; z = false}
 
 let y = match a with
   | {x = 1; y = true; z} -> 3
-  | z -> z.x <- 1; (match z with | {x = 1; y = true} -> z.x | _ -> 2)
+  | w -> w.x <- 1; (match w with | {x = 1; y = true} -> w.x | _ -> 2)
 

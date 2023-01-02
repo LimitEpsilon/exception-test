@@ -1,26 +1,53 @@
-module ZipSeq = struct
+module type Monad = sig
+  type 'a t
 
-  type 'a t = 'a Seq.t
-
-  open Seq
-
-  let rec return x =
-    fun () -> Cons(x, return x)
-
-  let rec prod a b =
-    fun () ->
-      match a (), b () with
-      | Nil, _ | _, Nil -> Nil
-      | Cons(x, a), Cons(y, b) -> Cons((x, y), prod a b)
-
-  let ( let+ ) f s = map s f
-  let ( and+ ) a b = prod a b
-
+  val return : 'a -> 'a t
+  val bind : 'a t -> ('a -> 'b t) -> 'b t
 end
 
-open ZipSeq
-let sum3 z1 z2 z3 =
-  let+ x1 = z1
-  and+ x2 = z2
-  and+ x3 = z3 in
-    x1 + x2 + x3
+module MonadSyntax (M : Monad) = struct
+  let ( >>= ) = M.bind
+  let ( let* ) = M.bind
+end
+
+module type Applicative = sig
+  type 'a t
+
+  val map : ('a -> 'b) -> 'a t -> 'b t
+  val product : 'a t -> 'b t -> ('a * 'b) t
+end
+
+module ApplicativeSyntax (A : Applicative) = struct
+  let ( >>| ) o f = A.map f o
+  let ( let+ ) = ( >>| )
+  let ( and+ ) = A.product
+end
+
+module ListBaseMonad : Monad with type 'a t = 'a list = struct
+  type 'a t = 'a list
+
+  let return x = [ x ]
+  let bind o f = List.concat_map f o
+end
+
+module ListBaseApplicative : Applicative with type 'a t = 'a list = struct
+  type 'a t = 'a list
+
+  let map = List.map
+  let product = List.combine
+end
+
+module ListMonad = struct
+  include ListBaseMonad
+  include MonadSyntax (ListBaseMonad)
+  include ListBaseApplicative
+  include ApplicativeSyntax (ListBaseApplicative)
+end
+
+open ListMonad
+
+let monad_add list_1 list_2 =
+  let+ monad_x = list_1 and+ monad_y = list_2 in
+  if monad_x + monad_y = 3 then raise Not_found else monad_x + monad_y
+
+let monad_a = monad_add [ 1; 2 ] [ 3; 4 ]
