@@ -30,8 +30,4 @@ let is_c = function
   | _ -> false
 
 
-module Gif = struct
-  type t = {width : int; height : int}
-end
-
-let x : Gif.t = {width = 1; height = 2}
+let _ = List.flatten [[1;2;3];[4;5]]
