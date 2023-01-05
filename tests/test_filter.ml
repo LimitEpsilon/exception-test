@@ -14,6 +14,6 @@ let x = match (A (B (C (D, D), D), B (C (D, D), D))) with
   | D -> D
 
 let y = match [1; 2] with
-  | [x; 1] -> x
+  | [x; 2] -> x
   | [2; y] -> y
   | _ -> 3
