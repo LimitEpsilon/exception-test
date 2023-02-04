@@ -4,7 +4,7 @@ let f (n, xf, yf) = if n < 0 then raise (xf [n])
                            else if n = 0 then raise (yf [n])
                                          else n
 let rec g m ~x y = match f (m, x, y) with
-  | exception ERROR [a] -> g a ~x:y x
+  (*| exception ERROR [a] -> g a ~x:y x *)
   | exception ERROR [] -> g (-1) ~x:y x
   | exception EXIT [a] -> g a ~x:y x
   | exception EXIT [] -> 1

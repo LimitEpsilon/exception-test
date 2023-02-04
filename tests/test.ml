@@ -29,5 +29,4 @@ let is_c = function
   | C -> true
   | _ -> false
 
-
 let _ = List.flatten [[1;2;3];[4;5]]
